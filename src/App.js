@@ -4,12 +4,24 @@ import { React, useState } from "react";
 
  //increase counter fonksiyonum
   const increase = () => {
-    setCounter((count) => count + 1);
+    if(counter===30){
+      
+    }
+    else{
+      setCounter((count) => count + 1)
+    }
+
   };
 
 //decrease counter fonksiyonum
  const decrease = () => {
- setCounter((count) => (count - 1) > 0);
+  if(counter===0){
+
+  }
+  else{
+    setCounter((count) => (count - 1));
+  }
+ 
  };
 
   //reset counter fonksiyonum
@@ -40,7 +52,7 @@ setCounter(0);
        </div>
       <div className="counter__enter">
          <span className="text">
-          {(counter % 10 ==0) ? <p>{counter} Sayısı gösterilmektedir</p> : <p></p>} {/*10,20,30 olduğunda yazım görünmeli değilse görünmesin*/}
+          {(counter % 10 ===0 && counter !==0) ? <p>{counter} Sayısı gösterilmektedir</p> : <p></p>} {/*10,20,30 olduğunda yazım görünmeli değilse görünmesin*/}
            </span>
        </div>
      </div>
